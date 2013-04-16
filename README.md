@@ -8,7 +8,7 @@
 
 ### About
 
-Say you have two lists. List 1 and List 2. You have been asked to check if each word in List 1 exists in List 2. Using a program such as Excel, you would use the VLOOKUP function or something similar to check if each word were in the other list. 
+Say you have two lists. List 1 and List 2. You would like to check if each word in List 1 exists in List 2. Using a program such as Excel, you might use the VLOOKUP function or something similar.
 
 It gets interesting when the names are *similar but not the exact same*. For example, what if one name was "Lastname, Firstname" and the other one was "FIRSTNAME LASTNAME"? You could do some string manipulation and do a VLOOKUP, and then you find that you also have these names:
 
