@@ -1,57 +1,10 @@
-#occurance
-# there are two lists, at least one list is unique
-# take the list that could be unique or non-unique
-# some of the entries are similar to those in the unique list
-# for example the entires have different order or has a comma
-# find the top 3 matches for all of the entries in the unique list
-# to be more specific
-# say in the unique list you had an entry of 
-# ebb flowgo
- 
-# in the non-unique list you had one of
-# ebb goflow
-# flowgo, ebb
-# ebbgoflow
- 
-# these should match
- 
-# caveats
-#  what happens when two are similar?
-#   a full word should matter more than a string, how do you manage that?
- 
-# all of these are similar and should show up as close matches
- 
-# set up two arrays, loop through
- 
-# opportunities
-  # soundex (consider how things sound (jeffery and geoffry))
-    #https://github.com/waltjones/soundex_find
- 
- 
-# Steps to getting this solved
-# the end is the iteration between strings, the first is getting the correct 
- 
-
-# setup array to the following format
-  # [ [ rw, value, value.order_downcase, {JaroWinkler.object} ]]
-    # the unique array should have the JaroWinkler object in it
- 
-# [order downcase] - put the strings into comparable order
-# [ goodmatch? ] - compares two strings
- 
-
-require 'pry'
 require 'rubygems'
 require 'scorer'
 require 'amatch'
 require 'parallel'
 require 'win32ole'
- 
 include Amatch
  
-
-
-#old methods
 def goodmatch?(check_string,base_string) # measure how good a match is
   base_string.match(check_string.order_downcase)
 end
@@ -60,17 +13,16 @@ def setsheet(sheetname) #create an instance variable for a sheet
   excel = WIN32OLE::connect('excel.Application')
   worksheet = nil
   excel.Workbooks.each{|wb| 
-  wb.Worksheets.each{|ws| 
-  if ws.name == sheetname
-  worksheet = ws
-  return ws
-  break
-  end
-  }
-  break unless worksheet.nil?
+    wb.Worksheets.each{|ws| 
+      if ws.name == sheetname
+        worksheet = ws
+        return ws
+        break
+      end
+    }
+    break unless worksheet.nil?
   }
 end
-
 
 class String
   def order_downcase #alphabetically order the letters in a string, downcase all of those letters
@@ -81,7 +33,6 @@ end
 
 def arraysetup(startrw, endrw, col, sheet, array, need_jaro=nil)
  #setup an array, [[ rw, name, downcase_name, jaroWinkler object ], [...], [nth array] ]
-  
   (startrw..endrw).each do |rw|
     tempvalue = (sheet.Cells(rw,col).value.to_s).order_downcase
     temparray = []
@@ -126,26 +77,19 @@ def fillsheet(sheetvar, rw, colstart, compare_array)
 
 end
 
-##### Actually running the program
-## setup sheets in instance variables
+
 @wsone = setsheet("one")
 @wstwo = setsheet("two")
-
 
 arry1 = []
 arry2 = []
 
-arry1 = arraysetup(2,237,1,@wsone, arry1, true)
-arry2 = arraysetup(2,153,1,@wstwo, arry2)
+#ARGV is placed in the arrays
+puts "...Setting up Array 1, using information from tab 'one' from rows 2 - #{ARGV[0]}"
+arry1 = arraysetup(2,ARGV[0].to_i,1,@wsone, arry1, true)
 
-# now have two arrays, need to compare them and then put the comparisions in the excel sheet
-
-# t = %w(one two three)
-# Parallel.each(t) { |x| puts x}
-
-
-
-
+puts "...Setting up Array 2, using information from tab 'tab' from rows 2 - #{ARGV[1]}"
+arry2 = arraysetup(2,ARGV[1].to_i,1,@wstwo, arry2)
 
 
 #Parallel.each_with_index(arry1, :in_threads => 2) do |array, index|
@@ -153,3 +97,6 @@ arry1.each_with_index do |array, index|
   ordered_array = match_and_order(array[3], arry2)
   fillsheet(@wsone, array[0], 3, ordered_array)
 end
+
+puts "Have filled in tab 'one' with the string matching results"
+

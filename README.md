@@ -1,7 +1,4 @@
 ![Image Alt](https://github.com/ebbflowgo/string_matching/blob/master/images/string_matching.png?raw=true)
-
-
-string_matching
 ===============
 
 ##### A quick and dirty way to find the similarity between two strings. Please fork it if you would like to change it.
@@ -17,6 +14,14 @@ It gets interesting when the names are *similar but not the exact same*. For exa
 
 For this situation it is useful to use something like the [JaroWinkler](http://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance) distance to measure the similarity between two strings. 
 
+### Run
+
+the two numbers after the file name are the number of rows in column A in tabs "one" and "two", respectively. 
+
+```ruby
+ruby string_matching.rb 10 4235
+```
+
 
 ### Setup
 
@@ -24,7 +29,8 @@ For this situation it is useful to use something like the [JaroWinkler](http://e
 2. Setup rubygems, gem install [scorer, amatch, parallel]
 3. Open an excel sheet, name one tab "one" and another "two"
 4. Put your benchmark words, the worsts you would like to find, in Column A of tab "one"
-5. Put the words that you would like to compare against in Column A of tab "two"
+5. In Column A of tab "two", put the words that you would like to compare against 
+6. Run the program
 
 ** Note that the first row should be a header, the code runs on the second row down.
 
