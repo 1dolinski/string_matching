@@ -1,4 +1,4 @@
-![Image Alt](https://github.com/ebbflowgo/string_matching/blob/master/images/string_matching.PNG?raw=true)
+![Image Alt](https://github.com/ebbflowgo/string_matching/blob/master/images/string_matching.png?raw=true)
 
 
 string_matching
