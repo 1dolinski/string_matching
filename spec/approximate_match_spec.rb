@@ -1,5 +1,6 @@
-#require File.dirname(__FILE__) + '/xlnalysis/xls'
-
+#not sure if there is a better practice for this, have seen => require 'approximate_match' 
+# however, this hasn't worked for me on Windows
+# be sure to check if an if statement is required to check if it's Windows or OSX
 require File.expand_path('../../approximate_match.rb', __FILE__)
  
 describe String, "#order_downcase" do
