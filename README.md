@@ -1,9 +1,13 @@
-<img src="https://github.com/ebbflowgo/string_matching/blob/master/string_matcher.PNG" width="100px">
+![Image Alt](https://github.com/ebbflowgo/essays/raw/master/images/string_matching.png)
+
 
 string_matching
 ===============
 
 ##### A quick and dirty way to find the similarity between two strings. Please fork it if you would like to change it.
+
+
+![Image Alt](https://github.com/ebbflowgo/essays/raw/master/images/Output_Example.png)
 
 ### About
 
