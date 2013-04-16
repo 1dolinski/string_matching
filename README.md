@@ -1,7 +1,7 @@
 ![Image Alt](https://github.com/ebbflowgo/string_matching/blob/master/images/string_matching.png?raw=true)
 ===============
 
-##### A quick and dirty way to find the similarity between two strings. Please fork it if you would like to change it.
+##### A quick and dirty way to find the similarity between two strings. Please fork it and send a pull request over if you would like to upgrade it.
 
 
 ![Image Alt](https://github.com/ebbflowgo/string_matching/blob/master/images/Output_Example.PNG?raw=true)
