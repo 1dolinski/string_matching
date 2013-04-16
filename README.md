@@ -16,7 +16,7 @@ For this situation it is useful to use something like the [JaroWinkler](http://e
 
 ### Run
 
-the two numbers after the file name are the number of rows in column A in tabs "one" and "two", respectively. 
+The two numbers after the file name are the number of rows in column A in tabs "one" and "two", respectively. 
 
 ```ruby
 ruby string_matching.rb 10 4235
@@ -30,7 +30,8 @@ ruby string_matching.rb 10 4235
 3. Open an excel sheet, name one tab "one" and another "two"
 4. Put your benchmark words, the worsts you would like to find, in Column A of tab "one"
 5. In Column A of tab "two", put the words that you would like to compare against 
-6. Run the program
+6. Clone the code into a database that you know of.
+7. Run the string_matching.rb in the lib folder.
 
 ** Note that the first row should be a header, the code runs on the second row down.
 
