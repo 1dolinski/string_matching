@@ -1,4 +1,4 @@
-![Image Alt](https://github.com/ebbflowgo/essays/raw/master/images/string_matching.png)
+![Image Alt](https://github.com/ebbflowgo/string_matching/blob/master/images/string_matcher.PNG?raw=true)
 
 
 string_matching
@@ -7,7 +7,7 @@ string_matching
 ##### A quick and dirty way to find the similarity between two strings. Please fork it if you would like to change it.
 
 
-![Image Alt](https://github.com/ebbflowgo/essays/raw/master/images/Output_Example.png)
+![Image Alt](https://github.com/ebbflowgo/string_matching/blob/master/images/Output_Example.PNG?raw=true)
 
 ### About
 
