@@ -37,8 +37,8 @@ ruby string_matching.rb 10 4235
 3. Open an excel sheet, name one tab "one" and another "two"
 4. Put your benchmark words, the worsts you would like to find, in Column A of tab "one"
 5. In Column A of tab "two", put the words that you would like to compare against 
-6. Clone the code into a database that you know of.
+6. Clone the code into a directory of your choice
 7. Run the string_matching.rb in the lib folder.
 
-** Note that the first row should be a header, the code runs on the second row down.
+** Note that the first row should be a header (manually generated), the code runs from the second row down.
 
